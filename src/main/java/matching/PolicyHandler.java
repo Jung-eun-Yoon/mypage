@@ -90,20 +90,34 @@ public class PolicyHandler{
 
         }
     }
-
     @StreamListener(KafkaProcessor.INPUT)
     public void wheneverGiftCanceled_(@Payload GiftCanceled giftCanceled){
-
         if(giftCanceled.isMe()){
-            System.out.println("##### here  : " + giftCanceled.toJson());
+            System.out.println("##### listener  : " + giftCanceled.toJson());
+
+            MyPageRepository.findById(giftCanceled.getMatchId()).ifPresent(MyPage ->{
+                System.out.println("##### wheneverMatchCanceled_MyPageRepository.findById : exist" );
+
+                MyPage.setCouponStatus("coupon canceled"); //상태값은 모두 이벤트타입으로 셋팅함
+                MyPageRepository.save(MyPage);
+            });
+
         }
     }
     @StreamListener(KafkaProcessor.INPUT)
     public void wheneverGiftPublished_(@Payload GiftPublished giftPublished){
-
         if(giftPublished.isMe()){
-            System.out.println("##### here  : " + giftPublished.toJson());
+            System.out.println("##### listener  : " + giftPublished.toJson());
+
+            MyPageRepository.findById(giftPublished.getMatchId()).ifPresent(MyPage ->{
+                System.out.println("##### wheneverMatchCanceled_MyPageRepository.findById : exist" );
+
+                MyPage.setCouponStatus(giftPublished.getCouponStatus()); //상태값은 모두 이벤트타입으로 셋팅함
+                MyPageRepository.save(MyPage);
+            });
+
         }
+
     }
 
 }

@@ -1,10 +1,8 @@
 matching\GiftCanceled.class
 matching\MyPageViewHandler.class
 matching\GiftPublished.class
-matching\PaymentRepository.class
 matching\AbstractEvent$1.class
 matching\AbstractEvent.class
-matching\PaymentController.class
 matching\config\kafka\KafkaProcessor.class
 matching\MyPageRepository.class
 matching\PaymentCanceled.class
@@ -15,6 +13,4 @@ matching\PolicyHandler.class
 matching\PaymentApproved.class
 matching\VisitCanceled.class
 matching\MyPageController.class
-matching\PaymentApplication.class
 matching\MyPage.class
-matching\Payment.class

@@ -14,6 +14,7 @@ public class MyPage {
     private String teacher;
     private String visitDate;
     private String status;
+    private String couponStatus;
 
 
     public Long getId() {
@@ -52,6 +53,12 @@ public class MyPage {
         this.status = status;
     }
 
+    public String getCouponStatus() {
+        return couponStatus;
+    }
+    public void setCouponStatus(String couponStatus) {
+        this.couponStatus = couponStatus;
+    }
 
 
 

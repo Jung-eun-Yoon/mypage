@@ -5,11 +5,11 @@ public class GiftCanceled extends AbstractEvent {
 
     private Long matchId;
 
-    public Long getId() {
+    public Long getMatchId() {
         return matchId;
     }
 
-    public void setId(Long matchId) {
+    public void setgetMatchId(Long matchId) {
         this.matchId = matchId;
     }
 }
